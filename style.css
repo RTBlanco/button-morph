@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8rem;
+}
+body div {
+  width: 20%;
+  background-color: aqua;
+}
+
+#right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#left {
+  display: flex;
+  justify-content: flex-start;
+}

@@ -1,3 +1,7 @@
+:root {
+  --width: 30%
+}
+
 body {
   display: flex;
   align-items: center;
@@ -12,63 +16,23 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 8rem;
-  /* animation-name: split; */
-  /* animation-duration: 5s; */
-
 }
 
 #buttons div {
   background-color: aqua;
 }
 
-#middle {
-  width: 0%;
-  transition: width 1s
-  /* animation-name: join;
-  animation-duration: 1s;
-  animation-fill-mode: backwards; */
-}
-
-.widden {
-  
-  animation-name: split;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  /* width: 20%; */
-}
-
-
 #right {
-  width: 20%;
+  width: var(--width);
   display: flex;
   justify-content: flex-end;
   transition: transform 0.8s;
 }
 
 #left {
-  width: 20%;
+  width: var(--width);
   display: flex;
   justify-content: flex-start;
   transition: transform 0.8s;
 }
 
-
-@keyframes split {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 20%;
-  }
-}
-
-@keyframes join {
-  from {
-    width: 20%;
-  }
-
-  to {
-    width: 0%;
-  }
-}

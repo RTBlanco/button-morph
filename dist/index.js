@@ -1,25 +1,30 @@
 "use strict";
 window.addEventListener("DOMContentLoaded", () => {
-  const buttonsDiv = document.getElementById("buttons");
-  const rightDiv = document.getElementById("right");
-  const leftDiv = document.getElementById("left");
-  const state = {
-    split: false,
-  };
-  rightDiv.addEventListener("click", () => animate(state, rightDiv, leftDiv));
-  leftDiv.addEventListener("click", () => animate(state, rightDiv, leftDiv));
+    const buttonsDiv = document.getElementById('buttons');
+    const rightDiv = document.getElementById("right");
+    const leftDiv = document.getElementById("left");
+    const state = {
+        split: false
+    };
+    rightDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv));
+    leftDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv));
 });
 function animate(state, rightDiv, leftDiv) {
-  if (state.split) {
-    rightDiv.setAttribute("style", "transform: translate(-50%);");
-    leftDiv.setAttribute("style", "transform: translate(50%);");
-    // rightDiv.style = "transform: translate(-50%);"
-    // leftDiv.style = "transform: translate(50%);"
-  } else {
-    rightDiv.setAttribute("style", "transform: translate(0%);");
-    leftDiv.setAttribute("style", "transform: translate(0%);");
-    // rightDiv.style = "transform: translate(0%);"
-    // leftDiv.style = "transform: translate(0%);"
-  }
-  state.split = !state.split;
+    if (state.split) {
+        rightDiv.setAttribute('style', "transform: translate(-50%);");
+        leftDiv.setAttribute('style', "transform: translate(50%);");
+        rightDiv.innerText = 'SAVE';
+        leftDiv.innerText = "DELETE";
+        // rightDiv.style = "transform: translate(-50%);"
+        // leftDiv.style = "transform: translate(50%);"  
+    }
+    else {
+        rightDiv.setAttribute('style', "transform: translate(0%);");
+        leftDiv.setAttribute('style', "transform: translate(0%);");
+        rightDiv.innerText = 'ED';
+        leftDiv.innerText = "IT";
+        // rightDiv.style = "transform: translate(0%);"
+        // leftDiv.style = "transform: translate(0%);"
+    }
+    state.split = !state.split;
 }

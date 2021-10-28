@@ -3,18 +3,44 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 8rem;
+  /* animation-name: split; */
+  /* animation-duration: 5s; */
+
 }
+
 body div {
-  width: 20%;
   background-color: aqua;
 }
 
+#middle {
+  width: 0%;
+  transition: width 2s ease-in-out;
+  /* animation-name: split;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out; */
+}
+
+
+
 #right {
+  width: 20%;
   display: flex;
   justify-content: flex-end;
 }
 
 #left {
+  width: 20%;
   display: flex;
   justify-content: flex-start;
+}
+
+
+@keyframes split {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 10%;
+  }
 }

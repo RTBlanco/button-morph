@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   const state: State = {
-    split: false
+    split: true
   }
 
   rightDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv))

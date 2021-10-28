@@ -4,17 +4,19 @@ window.addEventListener("DOMContentLoaded", () => {
     const rightDiv = document.getElementById("right");
     const leftDiv = document.getElementById("left");
     const state = {
-        split: false
+        split: true
     };
     rightDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv));
     leftDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv));
 });
 function animate(state, rightDiv, leftDiv) {
     if (state.split) {
-        rightDiv.setAttribute('style', "transform: translate(-50%);");
-        leftDiv.setAttribute('style', "transform: translate(50%);");
+        rightDiv.setAttribute('style', "transform: translate(-50%); justify-content: center;");
+        leftDiv.setAttribute('style', "transform: translate(50%); justify-content: center;");
         rightDiv.innerText = 'SAVE';
         leftDiv.innerText = "DELETE";
+        // centerText(rightDiv)
+        // centerText(leftDiv)
         // rightDiv.style = "transform: translate(-50%);"
         // leftDiv.style = "transform: translate(50%);"  
     }
@@ -27,4 +29,7 @@ function animate(state, rightDiv, leftDiv) {
         // leftDiv.style = "transform: translate(0%);"
     }
     state.split = !state.split;
+}
+function centerText(div) {
+    div.setAttribute("style", "justify-content: center;");
 }

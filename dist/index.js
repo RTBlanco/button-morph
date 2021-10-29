@@ -21,8 +21,6 @@ function animate(state, rightDiv, leftDiv) {
         leftDiv.setAttribute('style', "transform: translate(0%);");
         rightDiv.childNodes[0].textContent = 'ED';
         leftDiv.childNodes[0].textContent = "IT";
-        // rightDiv.style = "transform: translate(0%);"
-        // leftDiv.style = "transform: translate(0%);"
     }
     state.split = !state.split;
 }

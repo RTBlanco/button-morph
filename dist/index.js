@@ -13,8 +13,8 @@ function animate(state, rightDiv, leftDiv) {
     if (state.split) {
         rightDiv.setAttribute('style', "transform: translate(-50%); justify-content: center;");
         leftDiv.setAttribute('style', "transform: translate(50%); justify-content: center;");
-        rightDiv.innerText = 'SAVE';
-        leftDiv.innerText = "DELETE";
+        rightDiv.innerHTML = '<p>SAVE</p>';
+        leftDiv.innerHTML = "<p>DELETE</p>";
         // centerText(rightDiv)
         // centerText(leftDiv)
         // rightDiv.style = "transform: translate(-50%);"
@@ -23,8 +23,8 @@ function animate(state, rightDiv, leftDiv) {
     else {
         rightDiv.setAttribute('style', "transform: translate(0%);");
         leftDiv.setAttribute('style', "transform: translate(0%);");
-        rightDiv.innerText = 'ED';
-        leftDiv.innerText = "IT";
+        rightDiv.innerHTML = '<p>ED</p>';
+        leftDiv.innerHTML = "<p>IT</p>";
         // rightDiv.style = "transform: translate(0%);"
         // leftDiv.style = "transform: translate(0%);"
     }

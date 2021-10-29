@@ -9,8 +9,11 @@ window.addEventListener("DOMContentLoaded", () => {
     split: true
   }
 
-  rightDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv))
-  leftDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv))
+  
+  rightDiv.addEventListener('click', (e) => animate(state, rightDiv, leftDiv, e))
+  leftDiv.addEventListener('click', (e) => animate(state, rightDiv, leftDiv, e))
+  
+  
 })
 
 
@@ -18,7 +21,7 @@ interface State {
   split: boolean
 }
 
-function animate(state: State, rightDiv: HTMLElement, leftDiv: HTMLElement): void {
+function animate(state: State, rightDiv: HTMLElement, leftDiv: HTMLElement, event: Event): void {
   if (state.split) {
     rightDiv.setAttribute('style',"transform: translate(-50%); justify-content: center;")
     leftDiv.setAttribute('style', "transform: translate(50%); justify-content: center;" )
@@ -27,6 +30,13 @@ function animate(state: State, rightDiv: HTMLElement, leftDiv: HTMLElement): voi
     leftDiv.childNodes[0].textContent = "DELETE"
       
   } else {
+    let targetElm: any = event.target
+
+    if (targetElm === rightDiv || targetElm.parentElement === rightDiv  ) {
+      console.log("saved")
+    } else {
+      console.log("deleted")
+    }
     rightDiv.setAttribute('style',"transform: translate(0%);")
     leftDiv.setAttribute('style', "transform: translate(0%);" )
 

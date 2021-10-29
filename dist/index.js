@@ -6,10 +6,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const state = {
         split: true
     };
-    rightDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv));
-    leftDiv.addEventListener('click', () => animate(state, rightDiv, leftDiv));
+    rightDiv.addEventListener('click', (e) => animate(state, rightDiv, leftDiv, e));
+    leftDiv.addEventListener('click', (e) => animate(state, rightDiv, leftDiv, e));
 });
-function animate(state, rightDiv, leftDiv) {
+function animate(state, rightDiv, leftDiv, event) {
     if (state.split) {
         rightDiv.setAttribute('style', "transform: translate(-50%); justify-content: center;");
         leftDiv.setAttribute('style', "transform: translate(50%); justify-content: center;");
@@ -17,6 +17,13 @@ function animate(state, rightDiv, leftDiv) {
         leftDiv.childNodes[0].textContent = "DELETE";
     }
     else {
+        let targetElm = event.target;
+        if (targetElm === rightDiv || targetElm.parentElement === rightDiv) {
+            console.log("saved");
+        }
+        else {
+            console.log("deleted");
+        }
         rightDiv.setAttribute('style', "transform: translate(0%);");
         leftDiv.setAttribute('style', "transform: translate(0%);");
         rightDiv.childNodes[0].textContent = 'ED';
